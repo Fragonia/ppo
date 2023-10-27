@@ -1,24 +1,22 @@
-import random
+names = []
 
+count = input("Podaj liczbe graczy: ")
 
-class Player:
-    name = None
-    healthPoints = 100
+print(count)
+print(type(count))
 
-    def identify(self):
-        return "[" + str(self.healthPoints) + "] " + self.name
+count = int(count)
 
+for i in range(0, count):
+    name = input("Podaj imię i nazwisko: ")
+    names.append(name)
 
-def get_random_name():
-    names = ["John", "Jim", "Jack", "George", "Kevin"]
-    return random.choice(names)
+counter = 0
 
+for x in names:
+    if counter == 1:
+        x = x + " pizda"
+    print(x)
+    counter = counter + 1
 
-players = []
-
-player = Player()
-player.name = get_random_name()
-players.append(player)
-
-for player in players:
-    print(player.identify())
+print(names)
